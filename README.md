@@ -27,7 +27,7 @@ cmap2png.py cpt WVCOLOR35.cpt -100.0 100.0 20.0 "My awesome label" legend.png
 ```
 
 ## Build-All                                                  
-![](legends/goes-ch01-ref-pt-br.png)                                               
+![](legends/goes-ch01-ref-pt-br.png)
 ![](legends/goes-ch02-ref-pt-br.png)                                               
 ![](legends/goes-ch03-ref-pt-br.png)                                               
 ![](legends/goes-ch04-ref-pt-br.png)                                               
