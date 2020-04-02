@@ -183,7 +183,7 @@ if __name__ == '__main__':
     parser.add_argument('cmapType', type=str, help='Colormap type: [cpt, h2g or matplotlib]')
     
     # Define colormap identifier argument
-    parser.add_argument('cmapId', type=str, help='Colormap identifier')
+    parser.add_argument('cmapId', type=str, help='Colormap identifier or path to colormap file')
     
     # Define legend min value argument
     parser.add_argument('min', type=float, help='Legend minimum value')
