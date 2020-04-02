@@ -18,7 +18,7 @@ optional arguments:
   -h, --help  show this help message and exit
 ```
  
- ## Examples
+## Examples
 ```bash
 cmap2png.py matplotlib Greys -55.0 72.0 10.0 "Brightness Temperature ($^{\circ}$C)" legend-celsius-en.png
 ```
