@@ -67,10 +67,10 @@ def LoadCPT(path):
         g.append(gtemp)
         b.append(btemp)
 
-    x = np.array(x, np.float)
-    r = np.array(r, np.float)
-    g = np.array(g, np.float)
-    b = np.array(b, np.float)
+    x = np.array(x, float)
+    r = np.array(r, float)
+    g = np.array(g, float)
+    b = np.array(b, float)
     
     if colorModel == 'HSV':
         for i in range(r.shape[0]):
