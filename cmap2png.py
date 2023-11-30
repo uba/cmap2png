@@ -133,6 +133,29 @@ def LoadH2GColorMap(path):
     
     return cmap
 
+def LoadRGBsColorMap(path):
+    if exists(path) is False:
+        raise Exception('Color file ' + path + ' does not exist')
+        
+    f = open(path, 'r')
+    rline = f.readline().split()
+    gline = f.readline().split()
+    bline = f.readline().split()
+
+    colors = []
+    for r,g,b in zip(rline, gline, bline):
+        # Add to colormap
+        colors.append((int(r)/255.0, int(g)/255.0, int(b)/255.0))
+
+    # Cut-off
+    colors = colors[5:65]
+
+    f.close()
+
+    cmap = mpl.colors.LinearSegmentedColormap.from_list('colorbar', colors, N=len(colors), gamma=1.0)
+    
+    return cmap
+
 def cmap2png(cmapType, cmapId, minvalue, maxvalue, tickFreq, label, output):
     # Build color map
     cmap = None
@@ -140,6 +163,8 @@ def cmap2png(cmapType, cmapId, minvalue, maxvalue, tickFreq, label, output):
         cmap = LoadCPT(cmapId)
     elif cmapType == 'h2g':
         cmap = LoadH2GColorMap(cmapId)
+    elif cmapType == 'rgbs':
+        cmap = LoadRGBsColorMap(cmapId)
     elif cmapType == 'matplotlib':
         cmap = plt.cm.get_cmap(cmapId)
     else:
@@ -157,7 +182,6 @@ def cmap2png(cmapType, cmapId, minvalue, maxvalue, tickFreq, label, output):
     
     # Adjust ticks
     ticks = np.arange(minvalue, maxvalue + 1, tickFreq)
-    cb.set_ticks(ticks)
     ax.xaxis.set_tick_params(labelsize=7)
     
     # Set label
