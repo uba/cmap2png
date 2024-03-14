@@ -40,3 +40,7 @@ cmap2png('cpt', './resources/cpt/ir_realce_dsa_kelvin.cpt', -80.0, 40.0, 20.0, '
 cmap2png('cpt', './resources/cpt/bcyr.cpt', 0.0, 1.0, 0.2, 'Profundidade Ótica Aerosol (AOD)', './legends/goes-aod-pt-br.png')
 cmap2png('cpt', './resources/cpt/bcyr.cpt', 1.0, 60.0, 10.0, 'Precipitação (mm/h) (RRQPE)', './legends/goes-rrqpef-pt-br.png')
 cmap2png('cpt', './resources/cpt/bcyr.cpt', -5.0, 35.0, 10.0, 'Temperatura Sup. Mar ($^{\circ}$C) (SST)', './legends/goes-sstf-celsius-pt-br.png')
+
+# RADAR
+cmap2png('rgbs', './resources/cpt/radar.rgbs', minvalue=5, maxvalue=65,
+     tickFreq=None, label='Refletividade (dBZ)', output='./legends/radar-pt-br.png', ticks=[5,10,20,35,50,65])

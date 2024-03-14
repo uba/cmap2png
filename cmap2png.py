@@ -156,7 +156,7 @@ def LoadRGBsColorMap(path):
     
     return cmap
 
-def cmap2png(cmapType, cmapId, minvalue, maxvalue, tickFreq, label, output):
+def cmap2png(cmapType, cmapId, minvalue, maxvalue, tickFreq, label, output, ticks=None):
     # Build color map
     cmap = None
     if cmapType == 'cpt':
@@ -181,7 +181,10 @@ def cmap2png(cmapType, cmapId, minvalue, maxvalue, tickFreq, label, output):
     cb = mpl.colorbar.ColorbarBase(ax, cmap=cmap, norm=norm, orientation='horizontal')
     
     # Adjust ticks
-    ticks = np.arange(minvalue, maxvalue + 1, tickFreq)
+    if not ticks:
+        ticks = np.arange(minvalue, maxvalue + 1, tickFreq)
+
+    cb.set_ticks(ticks)
     ax.xaxis.set_tick_params(labelsize=7)
     
     # Set label
