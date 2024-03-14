@@ -75,3 +75,5 @@ cmap2png.py cpt WVCOLOR35.cpt -100.0 100.0 20.0 "My awesome label" legend.png
 ![](legends/goes-rrqpef-pt-br.png)
 
 ![](legends/goes-sstf-celsius-pt-br.png)
+
+![](legends/radar-pt-br.png)
